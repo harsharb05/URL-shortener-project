@@ -1,76 +1,168 @@
-# The Ultimate Java and Spring Boot Mastery Roadmap
+# 🔗 URL Shortener (Bitly Clone)
 
-Welcome to your one-stop-shop for mastering Java and Spring Boot! This repository offers a comprehensive learning experience with high-quality resources and community support. Dive into over 150+ hours of premium content, with everything you need to excel at Java and Spring Boot development.
+A full-stack URL Shortener application (Bitly Clone) built with **Spring Boot**, **Spring Security (JWT)**, **React.js**, **Tailwind CSS**, and **MySQL**.  
+The project allows users to shorten long URLs, manage their links, view analytics, and securely authenticate using JWT-based login and signup.
 
-## 🎓 Learning Roadmap
+---
 
-Most of the courses below are available in **Udemy For Business**, so if you have subscription - you can get FREE access.
-Here’s a structured path to enhance your skills with detailed courses available:
+## 🚀 Features
 
-1. **[Spring Boot By Building Complex Projects Step by Step](https://link.embarkx.com/spring-boot) (70+ Hours of Content)**
-2. **[Master Spring Boot Microservices](https://link.embarkx.com/microservices) (23+ Hours of Content)**
-3. **[Learn Java with 60+ Hours of Content](http://link.embarkx.com/java) (60+ Hours of Content)**
-4. **[Master Spring Security with React JS + OAuth2](https://link.embarkx.com/spring-security) (34+ Hours of Content)**
-5. **[Master IntelliJ IDEA](http://link.embarkx.com/intellij) (3+ Hours of Content)**
+- **User Authentication** (Signup & Login with JWT)
+- **Shorten URLs** with unique short codes
+- **Redirect Functionality** (short → original URL)
+- **URL Analytics Dashboard** (track clicks, usage stats)
+- **Manage URLs** (view all, update, delete)
+- **Role-based Access Control**
+- **Frontend Integration** (React + Tailwind CSS)
+- **Secure REST APIs** (Spring Boot)
+- **Dockerized Deployment**
+- **Cloud Database Support**
+- **Custom Domain & Path Routing**
 
+---
 
-## 🌟 With All Our Courses You Gain Access To
+## 🛠️ Tech Stack
 
-- 📝 **Notes:** Detailed and downloadable notes to accompany each lesson.
-- 💻 **Source Code:** Full access to the source code used in the tutorials.
-- 🤔 **Doubt Solving:** Responsive instructor and community support.
-- 🎥 **High-Quality HD Videos:** Easy to understand, high-definition video tutorials.
-- 🔄 **Free Lifetime Updates:** Continuous updates to course content at no extra cost.
+### Backend
+- Java 17
+- Spring Boot
+- Spring Security + JWT
+- Spring Data JPA + Hibernate
+- MySQL
+- Docker
 
-## 📚 Why Choose This Mastery Series?
+### Frontend
+- React.js
+- Tailwind CSS
+- Axios
 
-With this series, you're not just learning; you're preparing to dominate the field of Java and Spring Boot development. Our structured learning path ensures that you build your skills progressively, with each course designed to build on the knowledge gained from the previous one.
+### Deployment
+- Docker
+- Cloud Database (MySQL)
+- Free Hosting Platforms (Render / Railway / Netlify)
 
-### Join Us Now!
+---
 
-Start your journey today to become a master at Java and Spring Boot. Our community and expert instructors are here to support your learning every step of the way. **Enroll and start building your future, today!**
+## 📂 Project Structure
 
+```
+url-shortener-project/
+│── backend/        # Spring Boot Application
+│   ├── controllers/
+│   ├── models/
+│   ├── repositories/
+│   ├── services/
+│   └── security/   # JWT, UserDetailsService, SecurityConfig
+│
+│── frontend/       # React Application
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   └── utils/
+│   └── public/
+│
+│── docker-compose.yml
+│── README.md
+```
 
+---
 
+## ⚙️ Setup & Installation
 
+### 1. Clone the repository
+```bash
+git clone https://github.com/harsharb05/URL-shortener-project.git
+cd URL-shortener-project
+```
 
-# Usage Policy for Course Materials
+### 2. Backend Setup
+```bash
+cd backend
+mvn clean install
+mvn spring-boot:run
+```
 
-## Instructor Information
+- Configure `application.properties`:
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/urlshortener
+spring.datasource.username=root
+spring.datasource.password=yourpassword
+spring.jpa.hibernate.ddl-auto=update
+jwt.secret=your_jwt_secret_key
+```
 
-**Instructor:** Faisal Memon  
-**Company:** [EmbarkX.com](http://www.embarkx.com)
+Backend will run on: `http://localhost:8080`
 
-## Policy Overview
+### 3. Frontend Setup
+```bash
+cd frontend
+npm install
+npm start
+```
 
-This document outlines the guidelines and restrictions concerning the use of course materials provided by EmbarkX, including but not limited to PDF presentations, code samples, and video tutorials.
+Frontend will run on: `http://localhost:3000`
 
-### 1. Personal Use Only
+---
 
-The materials provided in this course are intended for **your personal use only**. They are to be used solely for the purpose of learning and completing this course.
+## 🧪 API Endpoints (Sample)
 
-### 2. No Unauthorized Sharing or Distribution
+| Method | Endpoint               | Description                  | Auth Required |
+|--------|-------------------------|------------------------------|---------------|
+| POST   | `/api/auth/signup`      | Register new user           | ❌ |
+| POST   | `/api/auth/login`       | Login & get JWT             | ❌ |
+| POST   | `/api/urls/shorten`     | Shorten a URL               | ✅ |
+| GET    | `/api/urls`             | Get all user URLs           | ✅ |
+| GET    | `/r/{shortCode}`        | Redirect to original URL    | ❌ |
+| GET    | `/api/urls/{id}/stats`  | Get analytics for a URL     | ✅ |
 
-You are **not permitted** to share, distribute, or publicly post any course materials on any websites, social media platforms, or other public forums without prior written consent from the instructor.
+---
 
-### 3. Intellectual Property
+## 📊 Dashboard Features
 
-All course materials are protected by copyright laws and are the intellectual property of Faisal Memon and EmbarkX. Unauthorized use, reproduction, or distribution of these materials is **strictly prohibited**.
+- View all shortened URLs
+- Track click analytics (per link)
+- Filter by user
+- Responsive & modern UI with Tailwind CSS
 
-### 4. Reporting Violations
+---
 
-If you become aware of any unauthorized sharing or distribution of course materials, please report it immediately to [embarkxofficial@gmail.com](mailto:embarkxofficial@gmail.com).
+## 🐳 Docker Deployment
 
-### 5. Legal Action
+```bash
+# Build and run using docker-compose
+docker-compose up --build
+```
 
-We reserve the right to take legal action against individuals or entities found to be violating this usage policy.
+---
 
-## Thank You
+## 🌍 Deployment
 
-Thank you for respecting these guidelines and helping us maintain the integrity of our course materials.
+- **Backend**: Deploy on Render / Railway / Heroku / AWS / Dockerized VPS  
+- **Frontend**: Deploy on Netlify / Vercel  
+- **Database**: Use MySQL Cloud (Railway / AWS RDS)
 
-## Contact Information
+---
 
-- **Email:** [embarkxofficial@gmail.com](mailto:embarkxofficial@gmail.com)
-- **Website:** [www.embarkx.com](http://www.embarkx.com)
+## 📸 Screenshots
 
+### 🔐 Login Page
+![Login Screenshot](docs/screenshots/login.png)
+
+### 📊 Dashboard
+![Dashboard Screenshot](docs/screenshots/dashboard.png)
+
+### 🔗 URL Analytics
+![Analytics Screenshot](docs/screenshots/analytics.png)
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — feel free to use and modify for your own projects.
+
+---
+
+## 👨‍💻 Author
+
+- GitHub: [@harsharb05](https://github.com/harsharb05)  
