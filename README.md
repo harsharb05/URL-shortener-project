@@ -43,8 +43,6 @@ The project allows users to shorten long URLs, manage their links, view analytic
 
 ---
 
----
-
 ## ⚙️ Setup & Installation
 
 ### 1. Clone the repository
