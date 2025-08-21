@@ -1,6 +1,6 @@
-# 🔗 URL Shortener (Bitly Clone)
+# 🔗 URL Shortener
 
-A full-stack URL Shortener application (Bitly Clone) built with **Spring Boot**, **Spring Security (JWT)**, **React.js**, **Tailwind CSS**, and **MySQL**.  
+A full-stack URL Shortener application built with **Spring Boot**, **Spring Security (JWT)**, **React.js**, **Tailwind CSS**, and **MySQL**.  
 The project allows users to shorten long URLs, manage their links, view analytics, and securely authenticate using JWT-based login and signup.
 
 ---
@@ -43,29 +43,6 @@ The project allows users to shorten long URLs, manage their links, view analytic
 
 ---
 
-## 📂 Project Structure
-
-```
-url-shortener-project/
-│── backend/        # Spring Boot Application
-│   ├── controllers/
-│   ├── models/
-│   ├── repositories/
-│   ├── services/
-│   └── security/   # JWT, UserDetailsService, SecurityConfig
-│
-│── frontend/       # React Application
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── context/
-│   │   └── utils/
-│   └── public/
-│
-│── docker-compose.yml
-│── README.md
-```
-
 ---
 
 ## ⚙️ Setup & Installation
@@ -105,19 +82,6 @@ Frontend will run on: `http://localhost:3000`
 
 ---
 
-## 🧪 API Endpoints (Sample)
-
-| Method | Endpoint               | Description                  | Auth Required |
-|--------|-------------------------|------------------------------|---------------|
-| POST   | `/api/auth/signup`      | Register new user           | ❌ |
-| POST   | `/api/auth/login`       | Login & get JWT             | ❌ |
-| POST   | `/api/urls/shorten`     | Shorten a URL               | ✅ |
-| GET    | `/api/urls`             | Get all user URLs           | ✅ |
-| GET    | `/r/{shortCode}`        | Redirect to original URL    | ❌ |
-| GET    | `/api/urls/{id}/stats`  | Get analytics for a URL     | ✅ |
-
----
-
 ## 📊 Dashboard Features
 
 - View all shortened URLs
@@ -141,20 +105,6 @@ docker-compose up --build
 - **Backend**: Deploy on Render / Railway / Heroku / AWS / Dockerized VPS  
 - **Frontend**: Deploy on Netlify / Vercel  
 - **Database**: Use MySQL Cloud (Railway / AWS RDS)
-
----
-
-## 📸 Screenshots
-
-### 🔐 Login Page
-![Login Screenshot](docs/screenshots/login.png)
-
-### 📊 Dashboard
-![Dashboard Screenshot](docs/screenshots/dashboard.png)
-
-### 🔗 URL Analytics
-![Analytics Screenshot](docs/screenshots/analytics.png)
-
 ---
 
 ## 📜 License
